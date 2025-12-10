@@ -1,3 +1,20 @@
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/02f92943-66cf-40ff-a7d8-be7ae107e569" 
+       alt="The Geography of Loss"
+       width="880">
+  <br>
+</p>
+
+<p align="center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg" width="55" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" width="55" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg" width="55" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="55" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/SQLite370.svg" width="55" />
+</p>
+
+
 # NPS Mortality Analysis
 
 This project integrates multiple datasets related to U.S. National Park units—mortality incidents, visitation data, activities, amenities, park attributes, and geographic boundaries—to explore potential patterns contributing to visitor risk and safety. The primary focus of this project is data integration, cleaning, normalization, and preparation for meaningful analysis using Python, SQL, and geospatial tools.

@@ -11,46 +11,6 @@ This ERD outlines the relational database schema for The Geography of Loss: A Da
 
 The schema uses a star-schema-inspired approach with fact tables, dimension tables, and dedicated structures for activities, amenities, and geospatial boundaries. The intention is to support both high-level statistical work and more exploratory, question-driven analysis.
 
-## Core Design Principles
-**Separation of Fact and Dimension Tables**
-
-The database contains two primary fact tables
-
-***Mortality Incidents*** – individual-level event data, including cause, intent, demographics, and date.
-
-***Visits*** – monthly visitation counts for each park unit.
-
-All categorical descriptors (such as intent, cause, activity, etc.) live in dimension tables so they can be joined cleanly and consistently.
-
-## Dual Time Dimensions
-
-Because mortality and visitation data are collected at different time grains, the schema uses two separate time dimensions.
-
-***DATES*** (Daily):
-Used for mortality analysis that depends on weekday/weekend patterns, seasons, and specific dates.
-
-***MONTHS*** (Monthly):
-Used for visitation data, which is only reported at the monthly level, and supports seasonal and year-over-year comparisons.
-
-## Park & Geospatial Modeling
-***Park Units***
-
-The PARK_UNITS table stores identifiers and characteristics for each national park unit, including designation, region, and attributes like activities and amenities.
-
-***Geospatial Boundaries***
-
-The GEO table stores each park’s geometry and related shape metadata. This structure makes it easier to join boundaries with the cleaned geopandas DataFrame used for interactive mapping and spatial analysis in Folium.
-
-## Activities and Amenities
-
-Because parks can have many activities and many amenities, the schema uses bridge tables:
-
-PARK_ACTIVITIES – many-to-many relationship between parks and activity types.
-
-AMENITIES – stores amenity attributes linked to each park, with AMENITY_TYPES standardizing category names.
-
-This structure allows analysis based on categories that may show meaningful insights in the relationship between park characteristics and mortality events.
-
 ## Analytical Advantages of This Design
 
 The schema supports:
@@ -64,3 +24,71 @@ Regional comparisons
 Activity and amenity based risk analysis
 
 Geospatial visualizations
+
+## Schema Outline
+
+**Fact Tables**
+
+- **MORTALITY_INCIDENTS**  
+  One row per mortality event.  
+  Key fields: `incident_id` (PK), `park_id`, `date_id`, `cause_id`, `intent_id`, `sex_id`, `age_range_id`, `activity_id`, `incident_date`.
+
+- **VISITS**  
+  Monthly visitation counts by park. One row per month for each park.
+  Key fields: `visits_id` (PK), `park_id`, `month_id`, `recreation_visitors`, `nonrecreation_visitors`, `total_visitors`.
+
+**Time Dimensions**
+
+- **DATES**  
+  Daily time dimension for incident-level analysis.  
+  Key fields: `date_id` (PK), `calendar_date`, `year`, `month`, `day`, `day_of_week`, `is_weekend`, `season`.
+
+- **MONTHS**  
+  Monthly time dimension for visitation and seasonal trends.  
+  Key fields: `month_id` (PK), `year`, `month_number`, `month_name`, `season`.
+
+**Park & Location Dimensions**
+
+- **PARK_UNITS**  
+  Canonical list of park units.  
+  Key fields: `park_id` (PK), `key_code`, `park_name`, `designation`, `region`, `infrastructure_level`, `backcountry_level`, `emergency_readiness`.
+
+- **GEO**  
+  Geospatial boundaries and geometry for each park.  
+  Key fields: `geo_id` (PK), `park_id`, `geometry`, `shape_area`, `shape_leng`.
+
+**Categorical Dimensions**
+
+- **CAUSE_TYPES**  
+  Standardized cause-of-death groupings.  
+  Key fields: `cause_id` (PK), `cause_name`, `cause_group`.
+
+- **INTENT_TYPES**  
+  Standardized intent categories.  
+  Key fields: `intent_id` (PK), `intent_name`.
+
+- **SEX**  
+  Reported sex categories.  
+  Key fields: `sex_id` (PK), `sex_label`.
+
+- **AGE_RANGES**  
+  Age bands used in reporting.  
+  Key fields: `age_range_id` (PK), `age_range_label`.
+
+- **ACTIVITY_TYPES**  
+  Standardized activity categories.  
+  Key fields: `activity_id` (PK), `activity_name`.
+
+- **AMENITY_TYPES**  
+  Standardized amenity categories.  
+  Key fields: `amenity_type_id` (PK), `amenity_type_name`.
+
+**Bridge Tables**
+
+- **PARK_ACTIVITIES**  
+  Links parks to the activities they offer (many-to-many).  
+  Key fields: `park_activity_id` (PK), `park_id`, `activity_id`.
+
+- **AMENITIES**  
+  Links parks to amenities and their types.  
+  Key fields: `amenity_id` (PK), `park_id`, `amenity_type_id`, `amenity_description`.

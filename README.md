@@ -229,6 +229,8 @@ This project was developed using ***Python***, ***SQL***, and ***Jupyter noteboo
 
 AI tools including ***ChatGPT*** and ***Claude*** were used for troubleshooting, code refinement, debugging assistance, and help generating reference tables or lookup structures when needed. All final code, methodological choices, interpretations, and analytical decisions were reviewed, validated, and implemented by me.
 
+Tools and properly licensed stock images from the ***Adobe Creative Suite*** were used to develop a unified color palette and imagery for this project.
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
        alt="-----------------">
@@ -261,7 +263,7 @@ Looking ahead, several next steps will continue to develop the analysis:
 
 ***Complete full exploratory data analysis (EDA) to better understand system-wide distributions and relationships.***
 
-***Expand temporal analysis to incorporate seasonal and multi-year trends, including effects of the COVID-19 pandemic on visitation and risks.***
+***Expand temporal analysis to incorporate seasonal and multi-year trends, including effects of the COVID-19 pandemic on visitation and risk.***
 
 ***Test additional statistical models to strengthen and validate rate calculations.***
 

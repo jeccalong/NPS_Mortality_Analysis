@@ -11,10 +11,9 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" width="55" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg" width="55" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/SQLite370.svg" width="55" />
+</p><p align="center"><a href="#project-setup"><img src="https://github.com/user-attachments/assets/999d25d9-9bb8-4def-8385-773eed624f38" width="130"></a><a href="#data-sources-and-citations"><img src="https://github.com/user-attachments/assets/081188ed-9fa7-4e87-82e3-704d2fccbaa0" width="130"></a><a href="#analytical-questions"><img src="https://github.com/user-attachments/assets/d9013da1-4211-49f7-8bd1-88c05fee1729" width="130"></a><a href="#summary-of-approach"><img src="https://github.com/user-attachments/assets/0df784cc-fb57-4afc-89ce-d5987cf0c1cc" width="130"></a><a href="#findings"><img src="https://github.com/user-attachments/assets/5f786a4c-9729-4d8e-9c3d-77927df0dc98" width="130"></a><a href="#acknowledgement-of-tools-and-assistance"><img src="https://github.com/user-attachments/assets/f8af1a0e-17ce-4a0d-86b0-c02d59c442b8" width="130"></a><a href="#special-acknowledgement"><img src="https://github.com/user-attachments/assets/e1c81def-63d1-4c3c-a9a9-dbe287eba13c" width="130"></a><a href="#next-steps"><img src="https://github.com/user-attachments/assets/8475e765-9093-466e-9403-d84b8facb3bd" width="130"></a>
 </p>
-<p align="center">
-  <a href="#project-setup"><img src="https://github.com/user-attachments/assets/999d25d9-9bb8-4def-8385-773eed624f38" width="130"></a><a href="#data-sources-and-citations"><img src="https://github.com/user-attachments/assets/081188ed-9fa7-4e87-82e3-704d2fccbaa0" width="130"></a><a href="#analytical-questions"><img src="https://github.com/user-attachments/assets/d9013da1-4211-49f7-8bd1-88c05fee1729" width="130"></a><a href="#summary-of-approach"><img src="https://github.com/user-attachments/assets/0df784cc-fb57-4afc-89ce-d5987cf0c1cc" width="130"></a><a href="#acknowledgement-of-tools-and-assistance"><img src="https://github.com/user-attachments/assets/f8af1a0e-17ce-4a0d-86b0-c02d59c442b8" width="130"></a><a href="#special-acknowledgement"><img src="https://github.com/user-attachments/assets/e1c81def-63d1-4c3c-a9a9-dbe287eba13c" width="130"></a><a href="#next-steps"><img src="https://github.com/user-attachments/assets/8475e765-9093-466e-9403-d84b8facb3bd" width="130"></a>
-</p>
+
 
 This project integrates multiple datasets related to U.S. National Park units, including mortality incidents, visitation data, activities, amenities, park attributes, and geographic boundaries, to explore potential patterns contributing to visitor risk and safety. The primary focus of this project is data integration, cleaning, normalization, and preparation for meaningful analysis using Python, SQL, and geospatial tools.
 
@@ -81,57 +80,124 @@ Open the notebooks in the \Notebooks directory to run the analysis
 
 This project uses several publicly available datasets and API endpoints from the U.S. National Park Service.
 
-#### Mortality Data
-National Park Service Mortality Dashboard
-https://www.nps.gov/aboutus/mortality-data.htm
+### Mortality Data
+***Author***: National Park Service
 
-#### Visitation Data
-NPS Stats Reporting System (scraped + API)
-https://irma.nps.gov/Stats/Reports/Park
+***Description***: Official mortality dataset compiled by the NPS Office of Risk Management. Includes incident-level records of visitor and employee deaths across National Park units, as presented in the NPS Mortality Dashboard.
 
-#### Official Park Lists
-FOIA Reading Room – Official NPS Park List
-https://www.nps.gov/aboutus/foia/foia-reading-room.htm
+***Source***: https://www.nps.gov/aboutus/mortality-data.htm
 
-#### NPS API Endpoints
-Activities API: https://developer.nps.gov/api/v1/activities/parks
-Amenities API: https://developer.nps.gov/api/v1/amenities
+### Visitation Data
+***Author***: National Park Service
 
-#### Geospatial Boundaries
-NPS Administrative Boundaries (GeoJSON)
-https://irma.nps.gov/DataStore/Reference/Profile/2224545?lnv=True
+***Description***: Monthly and annual visitation statistics for all NPS units, maintained through the IRMA (Integrated Resource Management Applications) Stats Reporting System. Used to calculate relative risk, normalize mortality rates, and compare park usage over time.
+
+***Source***: https://irma.nps.gov/Stats/Reports/Park
+
+### Official Park Lists
+***Author***: National Park Service
+
+***Description***: The official list of all National Park System units, maintained in the NPS FOIA Reading Room. Includes designations, status, and authoritative park codes used to standardize and reconcile multiple datasets.
+
+***Source***: https://www.nps.gov/aboutus/foia/foia-reading-room.htm
+
+### NPS API Endpoints
+***Author***: National Park Service
+
+***Description***: Public REST API providing structured data on park activities, amenities, events, alerts, and more. Used in this project to retrieve activity lists and amenity data for each park unit.
+
+***Source - Activities API***: https://developer.nps.gov/api/v1/activities/parks
+
+***Source - Amenities API***: https://developer.nps.gov/api/v1/amenities
+
+### Geospatial Boundaries
+***Author***: National Park Service
+
+***Description***: Administrative boundaries for all NPS units, provided as GeoJSON through the NPS IRMA DataStore. Used to generate maps, compute centroids, and spatially align park attributes.
+
+***Source***: https://irma.nps.gov/DataStore/Reference/Profile/2224545?lnv=True
 
 ## Analytical Questions
 
-This project is still in progress, but the primary analytical questions include:
+This project is still in progress and the questions guiding my work have evolved as I’ve explored the data. At this stage, the core questions I’m trying to answer include:
 
-How do recorded fatal incidents vary across National Park units when normalized for visitation volume?
+**How do recorded fatal incidents vary across National Park units once visitation volume is taken into account?**
 
-Are there geographic or spatial patterns—across regions, physical landscapes, or boundaries—that relate to incident occurrence?
+I’m interested in whether normalizing incidents by visitor counts helps reveal meaningful differences between parks that would otherwise be hidden by raw numbers.
 
-How do official park characteristics (designation, region, size, infrastructure level) relate to observed incident patterns?
+**Are there geographic or spatial patterns that help explain where fatalities occur?**
 
-Do certain activities, amenities, or park features correlate with particular categories or frequencies of mortality incidents?
+Generally speaking, terrain, weather patterns, and visitor profiles may be more similar when looking at geographic regions as opposed to system-wide. For example, both the situations you may encounter and the visitor profile vary wildly between park units such as the National Mall versus remote and harsh landscapes found in the Gates of the Arctic National Park.
 
-What temporal patterns (month, year, season) appear within the mortality dataset, and how do they interact with visitation cycles?
+**How do specific park characteristics like designation, region, infrastructure level, backcountry level, or emergency readiness, relate to mortality patterns?**
+
+Part of this project is exploring whether certain types of parks carry different kinds of risk, as well as examining the public safety benefits that may come from more resourced parks with similar terrain and features when compared to less resourced parks.
+
+**Do the activities a park offers correlate with its overall mortality rate or with certain categories of incidents?**
+
+Are some activities inherently more dangerous in all locations, or do some parks appear to be more successful at mitigating risk that comes with a particular activity.
+
+**What temporal patterns show up in the mortality data, and how do they interact with visitation cycles?**
+
+It seems straightforward that seasonal patterns would create more dangerous conditions, but does this result in increased mortality or does the visitor profile change in a way that actually reduces mortality as casual visitors and those unprepared for the conditions may not be common in more harsh conditions.
 
 ## Summary of Approach
 
-This project consolidates multiple NPS datasets with inconsistent naming conventions and identifiers. To support meaningful analysis, I created a unified key structure and designed a relational SQL schema connecting mortality data with:
+This project brings together several NPS datasets that were never designed to work together, each with its own identifiers, naming conventions, and structural quirks. One of my first major tasks was creating a unified key system and a relational SQL schema that connects visitation statistics, activities, amenities, geospatial boundries, multiple inconsistent park codes and naming conventions, and individual mortality records.
 
--visitation statistics
--park metadata
--activities and amenities
--geographic boundaries
--historic or alternative park codes
+Python was used for cleaning, normalization, and integration. I standardized codes, resolved mismatches, and prepared the data, which was then loaded into a SQL database.
 
-Python was used for data cleaning, normalization, and integration. SQL stores the structured data, and geospatial and statistical libraries support further analysis and visualization.
+Once the dataset was stable, I began applying statistical techniques to understand patterns more clearly. Techniques utilized include:
 
-Although analysis is ongoing, the integrated dataset and database structure form a solid foundation for identifying potential patterns in visitor safety.
+***Z-score standardization***
+
+Used to identify parks that meaningfully differ from the overall mortality distribution and to place parks on a comparable scale. This was used as an initial step to determine what variances exist and formulate the next steps for developing system to analyze mortality rates that could be both factually accurate and statistically meaningful.
+
+***Empirical Bayes credibility adjustment***
+
+This is the method used to stabilize park-level mortality rates and create credible rates used for comparison. Small units, units with very low visitation, and units with very few incidents can show unstable raw rates. The empirical Bayes approach "shrinks" extreme values toward the system-wide mean in a controlled and consistent way. Parks with more data retain more of their raw rate information and parks with sparse data receive more adjustment. This produces far more reliable comparisons across units.
+
+***Decile grouping and mapping***
+Mortality rates were binned into percentile groups to support choropleth visualization and make relative differences intuitive on a map.
+
+***Variance comparisons***
+During analysis, I hypothesized that the variance in mortality rates would be more stable when analyzed regionally vs system wide. I compared the variance of mortality rates across the entire National Park System to the variance within each individual region. The goal was to see whether parks inside the same region showed more consistency. I used these to test whether regional grouping explained differences in mortality. My hypothesis did not hold, which helped clarify the direction of the analysis.
+
+***Spearman Correlation***
+
+I converted the raw activities data, a single long list of all activities offered at each park, into a binary matrix showing whether each activity was present or not. Then I used Spearman correlation to look for consistent upward or downward trends between these activity indicators and mortality rates.
+
+The project is still ongoing, but the standardized schema, unified keys, and initial round of statistical work—including the credibility-adjusted rates—provide a strong foundation for deeper spatial, temporal, and multivariate analysis as I continue developing the project.
+
+## Findings
+
+This project is still in progress, but several clear patterns have been observed.
+
+***Mortality rates vary substantially across park units.***
+
+After adjusting for visitation volume—using an empirical Bayes credibility approach to stabilize the rates—parks still differ widely in mortality risk. This confirms that meaningful variation exists at the park level, not just as an artifact of visitation counts.
+
+***Mapping reveals meaningful spatial variation at the park level.***
+
+Park-level choropleth mapping with a continuous gradient based on credible mortality rates shows clear variation across the National Park System.
+
+***Regional grouping does not explain differences in mortality.***
+
+While mapping appears to identify strong regional patterns in mortality rates, comparing the variance of mortality rates system-wide to the variance within each NPS region, revealed regional variances just as large or larger. This means that parks within the same region are not more similar to each other in terms of mortality risk, so region alone isn’t a useful explanatory factor.
+
+***Park-offered activities do not show strong relationships with mortality rates.***
+
+After using Spearman correlation to explore potential relationships, it became apparant that most correlations were weak and none suggested that a single activity meaningfully raises or lowers risk at the park level. It was observed that activities that are associated with remoteness may be associated with higher mortality.
+
+**Parks offering more activities tend to have lower mortality rates overall.**
+
+When exploring the total number of activities offered per park, I found a slight trend that validates the remoteness finding revealed by Spearman correlation analysis. Parks with more recreational offerings generally had lower mortality rates. The relationship isn’t strong, but it’s consistent enough to note and may indicate that the strongest factor in preventing mortality is infrastructure, which speaks to the delicate balance of leaving our wild places wild, while all making them safe and accessible to visitors. 
 
 ## Acknowledgement of Tools and Assistance
 
-This project was completed using Python, SQL, Jupyter notebooks, and standard data science libraries. ChatGPT and Claude were used for troubleshooting, code refinement, and support in generating reference tables. All final code, design decisions, and analysis were reviewed and implemented by me.
+This project was developed using ***Python***, ***SQL***, and ***Jupyter notebooks***, along with common data science libraries including ***pandas***, ***NumPy***, ***GeoPandas***, ***Folium***, ***Matplotlib***, and ***Seaborn***. ***SQLite*** was used to design and manage the relational database that supports the analysis.
+
+AI tools including ***ChatGPT*** and ***Claude*** were used for troubleshooting, code refinement, debugging assistance, and help generating reference tables or lookup structures when needed. All final code, methodological choices, interpretations, and analytical decisions were reviewed, validated, and implemented by me.
 
 
 ## Special Acknowledgement
@@ -147,17 +213,18 @@ You can read more about Ranger Roberts, written by some of the many people to wh
 
 ## Next Steps
 
-Future improvements are planned to include:
+This project has already shown that park-level mortality varies in meaningful ways, and that building a unified analytical structure makes those patterns easier to see. By normalizing incidents for visitation, applying an empirical Bayes credibility adjustment, and creating a consistent relational database, I’ve been able to move beyond raw counts and uncover relationships that weren't visible in the original datasets. This work is important because identifying where and how fatal incidents occur can support better risk communication, visitor safety planning, and resource allocation across the National Park System, and also be used to develop safety insights and recommendations for wilderness areas that don't have the benefit of large amounts of data, such as state and regional park systems and independently held conservation areas. 
 
--Completing full exploratory data analysis
+Looking ahead, several next steps will continue to develop the analysis:
 
--Adding seasonal and environmental features
+***Complete full exploratory data analysis (EDA) to better understand system-wide distributions and relationships.***
 
--Refining spatial visualizations and rate calculations
+***Expand temporal analysis to incorporate seasonal and multi-year trends, including effects of the COVID-19 pandemic on visitation and risks.***
 
--Building interactive dashboards
+***Test additional statistical models to strengthen and validate rate calculations.***
 
--Updating schema as insights deepen
+***Build interactive dashboards for more intuitive and accessible exploration of park-level patterns.***
+
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 

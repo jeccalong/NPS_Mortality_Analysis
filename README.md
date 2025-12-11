@@ -76,6 +76,12 @@ jupyter notebook
 
 Open the notebooks in the \Notebooks directory to run the analysis
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+       alt="-----------------">
+  <br>
+</p>
+
 ## Data Sources and Citations
 
 This project uses several publicly available datasets and API endpoints from the U.S. National Park Service.
@@ -117,6 +123,12 @@ This project uses several publicly available datasets and API endpoints from the
 
 ***Source***: https://irma.nps.gov/DataStore/Reference/Profile/2224545?lnv=True
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+       alt="-----------------">
+  <br>
+</p>
+
 ## Analytical Questions
 
 This project is still in progress and the questions guiding my work have evolved as I’ve explored the data. At this stage, the core questions I’m trying to answer include:
@@ -140,6 +152,12 @@ Are some activities inherently more dangerous in all locations, or do some parks
 **What temporal patterns show up in the mortality data, and how do they interact with visitation cycles?**
 
 It seems straightforward that seasonal patterns would create more dangerous conditions, but does this result in increased mortality or does the visitor profile change in a way that actually reduces mortality as casual visitors and those unprepared for the conditions may not be common in more harsh conditions.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+       alt="-----------------">
+  <br>
+</p>
 
 ## Summary of Approach
 
@@ -169,6 +187,12 @@ I converted the raw activities data, a single long list of all activities offere
 
 The project is still ongoing, but the standardized schema, unified keys, and initial round of statistical work—including the credibility-adjusted rates—provide a strong foundation for deeper spatial, temporal, and multivariate analysis as I continue developing the project.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+       alt="-----------------">
+  <br>
+</p>
+
 ## Findings
 
 This project is still in progress, but several clear patterns have been observed.
@@ -193,11 +217,23 @@ After using Spearman correlation to explore potential relationships, it became a
 
 When exploring the total number of activities offered per park, I found a slight trend that validates the remoteness finding revealed by Spearman correlation analysis. Parks with more recreational offerings generally had lower mortality rates. The relationship isn’t strong, but it’s consistent enough to note and may indicate that the strongest factor in preventing mortality is infrastructure, which speaks to the delicate balance of leaving our wild places wild, while all making them safe and accessible to visitors. 
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+       alt="-----------------">
+  <br>
+</p>
+
 ## Acknowledgement of Tools and Assistance
 
 This project was developed using ***Python***, ***SQL***, and ***Jupyter notebooks***, along with common data science libraries including ***pandas***, ***NumPy***, ***GeoPandas***, ***Folium***, ***Matplotlib***, and ***Seaborn***. ***SQLite*** was used to design and manage the relational database that supports the analysis.
 
 AI tools including ***ChatGPT*** and ***Claude*** were used for troubleshooting, code refinement, debugging assistance, and help generating reference tables or lookup structures when needed. All final code, methodological choices, interpretations, and analytical decisions were reviewed, validated, and implemented by me.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+       alt="-----------------">
+  <br>
+</p>
 
 
 ## Special Acknowledgement
@@ -209,6 +245,12 @@ One individual I held in mind during this work is Suzanne “Sooz” Roberts, a 
 This project aims to treat the dataset with accuracy, respect, and integrity.
 
 You can read more about Ranger Roberts, written by some of the many people to whom she brought joy, at https://www.odmp.org/officer/reflections/17449-park-ranger-suzanne-e-suzi-roberts
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+       alt="-----------------">
+  <br>
+</p>
 
 
 ## Next Steps

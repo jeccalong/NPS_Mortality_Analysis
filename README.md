@@ -13,9 +13,9 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="55" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/SQLite370.svg" width="55" />
 </p>
-
-
-# NPS Mortality Analysis
+<p align="center">
+  <a href="#project-setup"><img src="https://github.com/user-attachments/assets/999d25d9-9bb8-4def-8385-773eed624f38" width="130"></a><a href="#data-sources-and-citations"><img src="https://github.com/user-attachments/assets/081188ed-9fa7-4e87-82e3-704d2fccbaa0" width="130"></a><a href="#analytical-questions"><img src="https://github.com/user-attachments/assets/d9013da1-4211-49f7-8bd1-88c05fee1729" width="130"></a><a href="#summary-of-approach"><img src="https://github.com/user-attachments/assets/0df784cc-fb57-4afc-89ce-d5987cf0c1cc" width="130"></a><a href="#acknowledgement-of-tools-and-assistance"><img src="https://github.com/user-attachments/assets/f8af1a0e-17ce-4a0d-86b0-c02d59c442b8" width="130"></a><a href="#special-acknowledgement"><img src="https://github.com/user-attachments/assets/e1c81def-63d1-4c3c-a9a9-dbe287eba13c" width="130"></a><a href="#next-steps"><img src="https://github.com/user-attachments/assets/8475e765-9093-466e-9403-d84b8facb3bd" width="130"></a>
+</p>
 
 This project integrates multiple datasets related to U.S. National Park units—mortality incidents, visitation data, activities, amenities, park attributes, and geographic boundaries—to explore potential patterns contributing to visitor risk and safety. The primary focus of this project is data integration, cleaning, normalization, and preparation for meaningful analysis using Python, SQL, and geospatial tools.
 
@@ -34,39 +34,46 @@ cd NPS_Mortality_Analysis
 
 #### Windows (PowerShell)
 
-```python -m venv .venv
+```bash
+python -m venv .venv
 .venv\Scripts\Activate
 ```
 
+Deactivate:
 
-Deactivate
-
-```deactivate
 ```
+deactivate
+```
+
 
 #### macOS/Linux
 
-```python3 -m venv .venv
+```python3
+-m venv .venv
 source .venv/bin/activate
 ```
 
 Deactivate
-```deactivate
+```
+deactivate
 ```
 
 ### Install Dependencies
 
 bash
-```pip install -r requirements.txt
+```
+pip install -r requirements.txt
 ```
 
 ### Run the Project
 
 bash
-```jupyter lab
+```
+jupyter lab
 ```
 OR
-```jupyter notebook
+```
+jupyter notebook
 ```
 
 Open the notebooks in the \Notebooks directory to run the analysis
@@ -127,15 +134,18 @@ Although analysis is ongoing, the integrated dataset and database structure form
 
 This project was completed using Python, SQL, Jupyter notebooks, and standard data science libraries. ChatGPT and Claude were used for troubleshooting, code refinement, and support in generating reference tables. All final code, design decisions, and analysis were reviewed and implemented by me.
 
+
 ## Special Acknowledgement
 
 While this work is technical, it also carries human significance. Each entry in the mortality dataset represents a real person, their community, and an event with lasting impact.
 
-One individual I held in mind during this work is Suzanne “Suzi” Roberts, a National Park Ranger and classmate in my first Wilderness EMT course. She died in 2004 while clearing fallen rocks from a road at Haleakalā National Park to protect visitors. Her story remains a reminder that every number in this dataset reflects a life rather than an abstraction.
+One individual I held in mind during this work is Suzanne “Suzi” Roberts, a National Park Ranger and classmate from my first Wilderness EMT course. She died in 2004 while clearing fallen rocks from a road at Haleakalā National Park to protect visitors. Her story remains a reminder that every number in this dataset reflects a life rather than an abstraction.
 
 This project aims to treat the dataset with accuracy, respect, and integrity.
 
-### Next Steps
+You can read more about Ranger Roberts, written by some of the many people to whom she brought joy, at https://www.odmp.org/officer/reflections/17449-park-ranger-suzanne-e-suzi-roberts
+
+## Next Steps
 
 -Future improvements may include:
 -Completing full exploratory data analysis
@@ -143,3 +153,9 @@ This project aims to treat the dataset with accuracy, respect, and integrity.
 -Refining spatial visualizations and rate calculations
 -Building interactive dashboards
 -Updating schema as insights deepen
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+       alt="-----------------">
+  <br>
+</p>

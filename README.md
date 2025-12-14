@@ -45,47 +45,54 @@ cd NPS_Mortality_Analysis
 
 ```bash
 python -m venv .venv
-.venv\Scripts\Activate
+.\.venv\Scripts\Activate.ps1
 ```
 
 Deactivate:
 
-```
+```bash
 deactivate
 ```
 
+---
 
 #### macOS/Linux
 
-```python3
--m venv .venv
+```bash
+python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-Deactivate
-```
+Deactivate:
+
+```bash
 deactivate
 ```
 
+---
+
 ### Install Dependencies
 
-bash
-```
+```bash
 pip install -r requirements.txt
 ```
 
+---
+
 ### Run the Project
 
-bash
-```
+```bash
 jupyter lab
 ```
-OR
-```
+
+or
+
+```bash
 jupyter notebook
 ```
 
-Open the notebooks in the \Notebooks directory to run the analysis. The correct order is: "aquisition_and_cleaning" followed by "analysis".
+Open the notebooks in the `notebooks/` directory to run the analysis.  
+Run `acquisition_and_cleaning.ipynb` first, followed by `analysis.ipynb`.
 
 <p align="center">
   <img src="assets/divider.png" 
@@ -96,33 +103,33 @@ Open the notebooks in the \Notebooks directory to run the analysis. The correct 
 ## File Structure
 
 ```text
-NPS_Mortality_Project/
+NPS_Mortality_Analysis/
 ├── README.md
 ├── requirements.txt
 ├── .env.example
 │
-├── assets/                           # README navigation and visual assets
+├── assets/                            # README navigation and visual assets
 ├── data/
-│   ├── raw/                          # Original source data (unchanged)
+│   ├── raw/                           # Original source data (unchanged)
 │   │   ├── api/
 │   │   ├── downloads/
 │   │   └── scraped/
 │   │
-│   ├── processed/                    # Processed datasets / .gpkg files
-│   │   └──nps_geo.gpkg
+│   ├── processed/                     # Processed datasets / .gpkg files
+│   │   └── nps_geo.gpkg
 │   │
-│   └── db/                           # SQLite database
+│   └── db/                            # SQLite database
 │       └── nps_mortality_project.db
 │
-├── Notebooks/
-│   ├── aquisition_and_cleaning.ipynb # Run this notebook first
-│   └── analysis.ipynb                # Run this notebook second
+├── notebooks/
+│   ├── acquisition_and_cleaning.ipynb # Run this notebook first
+│   └── analysis.ipynb                 # Run this notebook second
 │
-├── Maps/                              # Interactive .html map files
+├── maps/                               # Interactive .html map files
 │   ├── mortality_rate_geo_choropleth.html
 │   └── regional_mortality_rate_geo_choropleth.html
 │
-├── Plots/                             # Static figures exported from analysis
+├── plots/                              # Static figures exported from analysis
 │   ├── distribution_of_ages.png
 │   ├── distribution_of_causes_pie_plot.png
 │   ├── male_v_female_distribution.png
@@ -130,7 +137,7 @@ NPS_Mortality_Project/
 │   ├── spearman_correlation_activities.png
 │   └── top20_barplot.png
 │
-└── erd/                               # Database structure + reasoning
+└── erd/                                # Database structure + reasoning
     ├── erd.md
     ├── nps_erd.pdf
     └── nps_erd.png
@@ -220,7 +227,7 @@ It seems straightforward that seasonal patterns would create more dangerous cond
 
 ## Summary of Approach
 
-This project brings together several NPS datasets that were never designed to work together, each with its own identifiers, naming conventions, and structural quirks. One of my first major tasks was creating a unified key system and a relational SQL schema that connects visitation statistics, activities, amenities, geospatial boundries, multiple inconsistent park codes and naming conventions, and individual mortality records.
+This project brings together several NPS datasets that were never designed to work together, each with its own identifiers, naming conventions, and structural quirks. One of my first major tasks was creating a unified key system and a relational SQL schema that connects visitation statistics, activities, amenities, geospatial boundaries, multiple inconsistent park codes and naming conventions, and individual mortality records.
 
 Python was used for cleaning, normalization, and integration. I standardized codes, resolved mismatches, and prepared the data, which was then loaded into a SQL database.
 
@@ -235,10 +242,12 @@ Used to identify parks that meaningfully differ from the overall mortality distr
 This is the method used to stabilize park-level mortality rates and create credible rates used for comparison. Small units, units with very low visitation, and units with very few incidents can show unstable raw rates. The empirical Bayes approach "shrinks" extreme values toward the system-wide mean in a controlled and consistent way. Parks with more data retain more of their raw rate information and parks with sparse data receive more adjustment. This produces far more reliable comparisons across units.
 
 ***Decile grouping and mapping***
+
 Mortality rates were binned into percentile groups to support choropleth visualization and make relative differences intuitive on a map.
 
 ***Variance comparisons***
-During analysis, I hypothesized that the variance in mortality rates would be more stable when analyzed regionally vs system wide. I compared the variance of mortality rates across the entire National Park System to the variance within each individual region. The goal was to see whether parks inside the same region showed more consistency. I used these to test whether regional grouping explained differences in mortality. My hypothesis did not hold, which helped clarify the direction of the analysis.
+
+During analysis, I hypothesized that the variance in mortality rates would be more stable when analyzed regionally vs system-wide. I compared the variance of mortality rates across the entire National Park System to the variance within each individual region. The goal was to see whether parks inside the same region showed more consistency. I used these to test whether regional grouping explained differences in mortality. My hypothesis did not hold, which helped clarify the direction of the analysis.
 
 ***Spearman Correlation***
 
@@ -270,7 +279,7 @@ While mapping appears to identify strong regional patterns in mortality rates, c
 
 ***Park-offered activities do not show strong relationships with mortality rates.***
 
-After using Spearman correlation to explore potential relationships, it became apparant that most correlations were weak and none suggested that a single activity meaningfully raises or lowers risk at the park level. It was observed that activities that are associated with remoteness may be associated with higher mortality.
+After using Spearman correlation to explore potential relationships, it became apparent that most correlations were weak and none suggested that a single activity meaningfully raises or lowers risk at the park level. It was observed that activities that are associated with remoteness may be associated with higher mortality.
 
 **Parks offering more activities tend to have lower mortality rates overall.**
 

@@ -2,13 +2,13 @@
 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/02f92943-66cf-40ff-a7d8-be7ae107e569" 
+  <img src="assets/banner-geography-of-loss.png" 
        alt="The Geography of Loss"
        width="880">
   <br>
 </p>
 
-<p align="center"><a href="#project-setup"><img src="https://github.com/user-attachments/assets/999d25d9-9bb8-4def-8385-773eed624f38" width="130"></a><a href="#file-structure"><img src="https://github.com/user-attachments/assets/deca46bc-2700-46d9-9f56-e7577c97a6f8" width="130"></a><a href="#data-sources-and-citations"><img src="https://github.com/user-attachments/assets/081188ed-9fa7-4e87-82e3-704d2fccbaa0" width="130"></a><a href="#analytical-questions"><img src="https://github.com/user-attachments/assets/d9013da1-4211-49f7-8bd1-88c05fee1729" width="130"></a><a href="#summary-of-approach"><img src="https://github.com/user-attachments/assets/0df784cc-fb57-4afc-89ce-d5987cf0c1cc" width="130"></a><a href="#findings"><img src="https://github.com/user-attachments/assets/5f786a4c-9729-4d8e-9c3d-77927df0dc98" width="130"></a><a href="#acknowledgement-of-tools-and-assistance"><img src="https://github.com/user-attachments/assets/f8af1a0e-17ce-4a0d-86b0-c02d59c442b8" width="130"></a><a href="#special-acknowledgement"><img src="https://github.com/user-attachments/assets/e1c81def-63d1-4c3c-a9a9-dbe287eba13c" width="130"></a><a href="#next-steps"><img src="https://github.com/user-attachments/assets/8475e765-9093-466e-9403-d84b8facb3bd" width="130"></a><a href="#license"><img src="https://github.com/user-attachments/assets/61fae0f6-7aee-4737-a27c-99a5d382739b" width="130"></a></p>
+<p align="center"><a href="#project-setup"><img src="assets/nav-project-setup.png" width="130"></a><a href="#file-structure"><img src="assets/nav-file-structure.png" width="130"></a><a href="#data-sources-and-citations"><img src="assets/nav-data-sources.png" width="130"></a><a href="#analytical-questions"><img src="assets/nav-analytical-questions.png" width="130"></a><a href="#summary-of-approach"><img src="assets/nav-summary.png" width="130"></a><a href="#findings"><img src="assets/nav-findings.png" width="130"></a><a href="#acknowledgement-of-tools-and-assistance"><img src="assets/nav-tools.png" width="130"></a><a href="#special-acknowledgement"><img src="assets/nav-special-acknowledgement.png" width="130"></a><a href="#next-steps"><img src="assets/nav-next-steps.png" width="130"></a><a href="#license"><img src="assets/nav-license.png" width="130"></a></p>
 
 
 ### This project integrates multiple datasets related to U.S. National Park units, including mortality incidents, visitation data, activities, amenities, park attributes, and geographic boundaries, to explore potential patterns contributing to visitor risk and safety. The primary focus of this project is data integration, cleaning, normalization, and preparation for meaningful analysis using Python, SQL, and geospatial tools.
@@ -88,7 +88,7 @@ jupyter notebook
 Open the notebooks in the \Notebooks directory to run the analysis. The correct order is: "aquisition_and_cleaning" followed by "analysis".
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+  <img src="assets/divider.png" 
        alt="-----------------">
   <br>
 </p>
@@ -101,6 +101,7 @@ NPS_Mortality_Project/
 ├── requirements.txt
 ├── .env.example
 │
+├── assets/                           # README navigation and visual assets
 ├── data/
 │   ├── raw/                          # Original source data (unchanged)
 │   │   ├── api/
@@ -135,7 +136,7 @@ NPS_Mortality_Project/
     └── nps_erd.png
 ```
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+  <img src="assets/divider.png" 
        alt="-----------------">
   <br>
 </p>
@@ -182,7 +183,7 @@ This project uses several publicly available datasets and API endpoints from the
 ***Source***: https://irma.nps.gov/DataStore/Reference/Profile/2224545?lnv=True
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+  <img src="assets/divider.png" 
        alt="-----------------">
   <br>
 </p>
@@ -212,7 +213,7 @@ Are some activities inherently more dangerous in all locations, or do some parks
 It seems straightforward that seasonal patterns would create more dangerous conditions, but does this result in increased mortality or does the visitor profile change in a way that actually reduces mortality as casual visitors and those unprepared for the conditions may not be common in more harsh conditions.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+  <img src="assets/divider.png" 
        alt="-----------------">
   <br>
 </p>
@@ -246,7 +247,7 @@ I converted the raw activities data, a single long list of all activities offere
 The project is still ongoing, but the standardized schema, unified keys, and initial round of statistical work—including the credibility-adjusted rates—provide a strong foundation for deeper spatial, temporal, and multivariate analysis as I continue developing the project.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+  <img src="assets/divider.png" 
        alt="-----------------">
   <br>
 </p>
@@ -276,7 +277,7 @@ After using Spearman correlation to explore potential relationships, it became a
 When exploring the total number of activities offered per park, I found a slight trend that validates the remoteness finding revealed by Spearman correlation analysis. Parks with more recreational offerings generally had lower mortality rates. The relationship isn’t strong, but it’s consistent enough to note and may indicate that the strongest factor in preventing mortality is infrastructure, which speaks to the delicate balance of leaving our wild places wild, while all making them safe and accessible to visitors. 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+  <img src="assets/divider.png" 
        alt="-----------------">
   <br>
 </p>
@@ -290,7 +291,7 @@ AI tools including ***ChatGPT*** and ***Claude*** were used for troubleshooting,
 Tools and properly licensed stock images from the ***Adobe Creative Suite*** were used to develop a unified color palette and imagery for this project.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+  <img src="assets/divider.png" 
        alt="-----------------">
   <br>
 </p>
@@ -307,7 +308,7 @@ This project aims to treat the dataset with accuracy, respect, and integrity.
 You can read more about Ranger Roberts, written by some of the many people to whom she brought joy, at https://www.odmp.org/officer/reflections/17449-park-ranger-suzanne-e-suzi-roberts
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+  <img src="assets/divider.png" 
        alt="-----------------">
   <br>
 </p>
@@ -329,7 +330,7 @@ Looking ahead, several next steps will continue to develop the analysis:
 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
+  <img src="assets/divider.png" 
        alt="-----------------">
   <br>
 </p>

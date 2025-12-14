@@ -1,4 +1,6 @@
 
+
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/02f92943-66cf-40ff-a7d8-be7ae107e569" 
        alt="The Geography of Loss"
@@ -6,16 +8,26 @@
   <br>
 </p>
 
-<p align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg" width="55" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" width="55" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg" width="55" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/SQLite370.svg" width="55" />
-</p><p align="center"><a href="#project-setup"><img src="https://github.com/user-attachments/assets/999d25d9-9bb8-4def-8385-773eed624f38" width="130"><a href="#file-structure"><img src="https://github.com/user-attachments/assets/deca46bc-2700-46d9-9f56-e7577c97a6f8" width="130"></a></a><a href="#data-sources-and-citations"><img src="https://github.com/user-attachments/assets/081188ed-9fa7-4e87-82e3-704d2fccbaa0" width="130"></a><a href="#analytical-questions"><img src="https://github.com/user-attachments/assets/d9013da1-4211-49f7-8bd1-88c05fee1729" width="130"></a><a href="#summary-of-approach"><img src="https://github.com/user-attachments/assets/0df784cc-fb57-4afc-89ce-d5987cf0c1cc" width="130"></a><a href="#findings"><img src="https://github.com/user-attachments/assets/5f786a4c-9729-4d8e-9c3d-77927df0dc98" width="130"></a><a href="#acknowledgement-of-tools-and-assistance"><img src="https://github.com/user-attachments/assets/f8af1a0e-17ce-4a0d-86b0-c02d59c442b8" width="130"></a><a href="#special-acknowledgement"><img src="https://github.com/user-attachments/assets/e1c81def-63d1-4c3c-a9a9-dbe287eba13c" width="130"></a><a href="#next-steps"><img src="https://github.com/user-attachments/assets/8475e765-9093-466e-9403-d84b8facb3bd" width="130"></a>
+<p align="center"><a href="#project-setup"><img src="https://github.com/user-attachments/assets/999d25d9-9bb8-4def-8385-773eed624f38" width="130"><a href="#file-structure"><img src="https://github.com/user-attachments/assets/deca46bc-2700-46d9-9f56-e7577c97a6f8" width="130"></a></a><a href="#data-sources-and-citations"><img src="https://github.com/user-attachments/assets/081188ed-9fa7-4e87-82e3-704d2fccbaa0" width="130"></a><a href="#analytical-questions"><img src="https://github.com/user-attachments/assets/d9013da1-4211-49f7-8bd1-88c05fee1729" width="130"></a><a href="#summary-of-approach"><img src="https://github.com/user-attachments/assets/0df784cc-fb57-4afc-89ce-d5987cf0c1cc" width="130"></a><a href="#findings"><img src="https://github.com/user-attachments/assets/5f786a4c-9729-4d8e-9c3d-77927df0dc98" width="130"></a><a href="#acknowledgement-of-tools-and-assistance"><img src="https://github.com/user-attachments/assets/f8af1a0e-17ce-4a0d-86b0-c02d59c442b8" width="130"></a><a href="#special-acknowledgement"><img src="https://github.com/user-attachments/assets/e1c81def-63d1-4c3c-a9a9-dbe287eba13c" width="130"></a><a href="#next-steps"><img src="https://github.com/user-attachments/assets/8475e765-9093-466e-9403-d84b8facb3bd" width="130"></a>
 </p>
 
 
-This project integrates multiple datasets related to U.S. National Park units, including mortality incidents, visitation data, activities, amenities, park attributes, and geographic boundaries, to explore potential patterns contributing to visitor risk and safety. The primary focus of this project is data integration, cleaning, normalization, and preparation for meaningful analysis using Python, SQL, and geospatial tools.
+**This project integrates multiple datasets related to U.S. National Park units, including mortality incidents, visitation data, activities, amenities, park attributes, and geographic boundaries, to explore potential patterns contributing to visitor risk and safety. The primary focus of this project is data integration, cleaning, normalization, and preparation for meaningful analysis using Python, SQL, and geospatial tools.**
+
+---
+
+<div align="center" style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
+
+  <img alt="Python"     src="https://img.shields.io/badge/Python-3.x-022440?logo=python&logoColor=white" />
+  <img alt="Pandas"     src="https://img.shields.io/badge/Pandas-Data%20Analysis-022440?logo=pandas&logoColor=white" />
+  <img alt="NumPy"      src="https://img.shields.io/badge/NumPy-Numerical-022440?logo=numpy&logoColor=white" />
+  <img alt="GeoPandas"  src="https://img.shields.io/badge/GeoPandas-Geospatial-022440?logo=geopandas&logoColor=white" />
+  <img alt="Folium"     src="https://img.shields.io/badge/Folium-Interactive%20Maps-022440" />
+  <img alt="Matplotlib" src="https://img.shields.io/badge/Matplotlib-Visualization-022440" />
+  <img alt="SQLite"     src="https://img.shields.io/badge/SQLite-Database-022440?logo=sqlite&logoColor=white" />
+
+</div>
+
 
 ---
 
@@ -74,7 +86,7 @@ OR
 jupyter notebook
 ```
 
-Open the notebooks in the \Notebooks directory to run the analysis. "aquisition_and_cleaning" should be run first, then "analysis"
+Open the notebooks in the \Notebooks directory to run the analysis. The correct order is: "aquisition_and_cleaning" followed by "analysis".
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
@@ -322,3 +334,9 @@ Looking ahead, several next steps will continue to develop the analysis:
        alt="-----------------">
   <br>
 </p>
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+This license applies to original code, analysis, and documentation in this repository. Source datasets are governed by their respective providers.

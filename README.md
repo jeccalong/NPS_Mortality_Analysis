@@ -11,7 +11,7 @@
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" width="55" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg" width="55" />
   <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/SQLite370.svg" width="55" />
-</p><p align="center"><a href="#project-setup"><img src="https://github.com/user-attachments/assets/999d25d9-9bb8-4def-8385-773eed624f38" width="130"><a href="#file_structure"><img src="https://github.com/user-attachments/assets/deca46bc-2700-46d9-9f56-e7577c97a6f8" width="130"></a></a><a href="#data-sources-and-citations"><img src="https://github.com/user-attachments/assets/081188ed-9fa7-4e87-82e3-704d2fccbaa0" width="130"></a><a href="#analytical-questions"><img src="https://github.com/user-attachments/assets/d9013da1-4211-49f7-8bd1-88c05fee1729" width="130"></a><a href="#summary-of-approach"><img src="https://github.com/user-attachments/assets/0df784cc-fb57-4afc-89ce-d5987cf0c1cc" width="130"></a><a href="#findings"><img src="https://github.com/user-attachments/assets/5f786a4c-9729-4d8e-9c3d-77927df0dc98" width="130"></a><a href="#acknowledgement-of-tools-and-assistance"><img src="https://github.com/user-attachments/assets/f8af1a0e-17ce-4a0d-86b0-c02d59c442b8" width="130"></a><a href="#special-acknowledgement"><img src="https://github.com/user-attachments/assets/e1c81def-63d1-4c3c-a9a9-dbe287eba13c" width="130"></a><a href="#next-steps"><img src="https://github.com/user-attachments/assets/8475e765-9093-466e-9403-d84b8facb3bd" width="130"></a>
+</p><p align="center"><a href="#project-setup"><img src="https://github.com/user-attachments/assets/999d25d9-9bb8-4def-8385-773eed624f38" width="130"><a href="#file-structure"><img src="https://github.com/user-attachments/assets/deca46bc-2700-46d9-9f56-e7577c97a6f8" width="130"></a></a><a href="#data-sources-and-citations"><img src="https://github.com/user-attachments/assets/081188ed-9fa7-4e87-82e3-704d2fccbaa0" width="130"></a><a href="#analytical-questions"><img src="https://github.com/user-attachments/assets/d9013da1-4211-49f7-8bd1-88c05fee1729" width="130"></a><a href="#summary-of-approach"><img src="https://github.com/user-attachments/assets/0df784cc-fb57-4afc-89ce-d5987cf0c1cc" width="130"></a><a href="#findings"><img src="https://github.com/user-attachments/assets/5f786a4c-9729-4d8e-9c3d-77927df0dc98" width="130"></a><a href="#acknowledgement-of-tools-and-assistance"><img src="https://github.com/user-attachments/assets/f8af1a0e-17ce-4a0d-86b0-c02d59c442b8" width="130"></a><a href="#special-acknowledgement"><img src="https://github.com/user-attachments/assets/e1c81def-63d1-4c3c-a9a9-dbe287eba13c" width="130"></a><a href="#next-steps"><img src="https://github.com/user-attachments/assets/8475e765-9093-466e-9403-d84b8facb3bd" width="130"></a>
 </p>
 
 
@@ -90,17 +90,17 @@ NPS_Mortality_Project/
 ├── requirements.txt
 ├── .env.example
 │
-├── Data/
+├── data/
 │   ├── raw/                       # Original source data (unchanged)
 │   │   ├── api/
 │   │   ├── downloads/
 │   │   └── scraped/
 │   │
 │   ├── processed/                 # Processed datasets / .gpkg files
-│   │   └── NPS_Geo.gpkg
+│   │   └──nps_geo.gpkg
 │   │
 │   └── db/                        # SQLite database
-│       └── NPS_Mortality_Project.db
+│       └── nps_mortality_project.db
 │
 ├── Notebooks/
 │   ├── aquisitionAndCleaning.ipynb # Run this notebook first
@@ -118,10 +118,10 @@ NPS_Mortality_Project/
 │   ├── spearman_correlation_activities.png
 │   └── top20_barplot.png
 │
-└── ERD/                            # Database structure + reasoning
-    ├── ERD.md
-    ├── NPS_ERD.pdf
-    └── NPS_ERD.png
+└── erd/                            # Database structure + reasoning
+    ├── erd.md
+    ├── nps_erd.pdf
+    └── nps_erd.png
 ```
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 

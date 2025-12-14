@@ -11,7 +11,9 @@
 <p align="center"><a href="#project-setup"><img src="assets/nav-project-setup.png" width="130"></a><a href="#file-structure"><img src="assets/nav-file-structure.png" width="130"></a><a href="#data-sources-and-citations"><img src="assets/nav-data-sources.png" width="130"></a><a href="#analytical-questions"><img src="assets/nav-analytical-questions.png" width="130"></a><a href="#summary-of-approach"><img src="assets/nav-summary.png" width="130"></a><a href="#findings"><img src="assets/nav-findings.png" width="130"></a><a href="#acknowledgement-of-tools-and-assistance"><img src="assets/nav-tools.png" width="130"></a><a href="#special-acknowledgement"><img src="assets/nav-special-acknowledgement.png" width="130"></a><a href="#next-steps"><img src="assets/nav-next-steps.png" width="130"></a><a href="#license"><img src="assets/nav-license.png" width="130"></a></p>
 
 
-### This project integrates multiple datasets related to U.S. National Park units, including mortality incidents, visitation data, activities, amenities, park attributes, and geographic boundaries, to explore potential patterns contributing to visitor risk and safety. The primary focus of this project is data integration, cleaning, normalization, and preparation for meaningful analysis using Python, SQL, and geospatial tools.
+**This project integrates multiple datasets related to U.S. National Park units, including mortality incidents, visitation data, activities, amenities, park attributes, and geographic boundaries, to explore potential patterns contributing to visitor risk and safety.** 
+
+**The primary focus of this project is data integration, cleaning, normalization, and preparation for meaningful analysis using Python, SQL, and geospatial tools.**
 
 ---
 
@@ -39,7 +41,7 @@ git clone https://github.com/jeccalong/NPS_Mortality_Analysis.git
 cd NPS_Mortality_Analysis
 ```
 
-### 2. Create and Activate a virtual environment.
+### 2. Create and Activate a virtual environment
 
 #### Windows (PowerShell)
 
@@ -213,7 +215,7 @@ Part of this project is exploring whether certain types of parks carry different
 
 **Do the activities a park offers correlate with its overall mortality rate or with certain categories of incidents?**
 
-Are some activities inherently more dangerous in all locations, or do some parks appear to be more successful at mitigating risk that comes with a particular activity.
+Are some activities inherently more dangerous across all locations, or do some parks appear more successful at mitigating the risks associated with specific activities?
 
 **What temporal patterns show up in the mortality data, and how do they interact with visitation cycles?**
 
@@ -235,7 +237,7 @@ Once the dataset was stable, I began applying statistical techniques to understa
 
 ***Z-score standardization***
 
-Used to identify parks that meaningfully differ from the overall mortality distribution and to place parks on a comparable scale. This was used as an initial step to determine what variances exist and formulate the next steps for developing system to analyze mortality rates that could be both factually accurate and statistically meaningful.
+Used to identify parks that meaningfully differ from the overall mortality distribution and to place parks on a comparable scale. This was used as an initial step to determine what variances exist and formulate the next steps for developing a system to analyze mortality rates that could be both factually accurate and statistically meaningful.
 
 ***Empirical Bayes credibility adjustment***
 
@@ -293,7 +295,7 @@ When exploring the total number of activities offered per park, I found a slight
 
 ## Acknowledgement of Tools and Assistance
 
-This project was developed using ***Python***, ***SQL***, and ***Jupyter notebooks***, along with common data science libraries including ***pandas***, ***NumPy***, ***GeoPandas***, ***Folium***, ***Matplotlib***, and ***Seaborn***. ***SQLite*** was used to design and manage the relational database that supports the analysis.
+This project was developed using ***Python***, ***SQL***, and ***Jupyter notebooks***, along with common data science libraries including ***pandas***, ***NumPy***, ***GeoPandas***, ***Folium***, and ***Matplotlib***. ***SQLite*** was used to design and manage the relational database that supports the analysis.
 
 AI tools including ***ChatGPT*** and ***Claude*** were used for troubleshooting, code refinement, debugging assistance, and help generating reference tables or lookup structures when needed. All final code, methodological choices, interpretations, and analytical decisions were reviewed, validated, and implemented by me.
 
@@ -325,7 +327,11 @@ You can read more about Ranger Roberts, written by some of the many people to wh
 
 ## Next Steps
 
-This project has already shown that park-level mortality varies in meaningful ways, and that building a unified analytical structure makes those patterns easier to see. By normalizing incidents for visitation, applying an empirical Bayes credibility adjustment, and creating a consistent relational database, I’ve been able to move beyond raw counts and uncover relationships that weren't visible in the original datasets. This work is important because identifying where and how fatal incidents occur can support better risk communication, visitor safety planning, and resource allocation across the National Park System, and also be used to develop safety insights and recommendations for wilderness areas that don't have the benefit of large amounts of data, such as state and regional park systems and independently held conservation areas. 
+This project has already shown that park-level mortality varies in meaningful ways, and that building a unified analytical structure makes those patterns easier to see. 
+
+By normalizing incidents for visitation, applying an empirical Bayes credibility adjustment, and creating a consistent relational database, I’ve been able to move beyond raw counts and uncover relationships that weren't visible in the original datasets. 
+
+This work is important because identifying where and how fatal incidents occur can support better risk communication, visitor safety planning, and resource allocation across the National Park System, and also be used to develop safety insights and recommendations for wilderness areas that don't have the benefit of large amounts of data, such as state and regional park systems and independently held conservation areas. 
 
 Looking ahead, several next steps will continue to develop the analysis:
 

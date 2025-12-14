@@ -74,7 +74,7 @@ OR
 jupyter notebook
 ```
 
-Open the notebooks in the \Notebooks directory to run the analysis
+Open the notebooks in the \Notebooks directory to run the analysis. "aquisition_and_cleaning" should be run first, then "analysis"
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a2eeca21-64fb-4834-9558-4162e2bd8be0" 
@@ -91,26 +91,26 @@ NPS_Mortality_Project/
 ├── .env.example
 │
 ├── data/
-│   ├── raw/                       # Original source data (unchanged)
+│   ├── raw/                          # Original source data (unchanged)
 │   │   ├── api/
 │   │   ├── downloads/
 │   │   └── scraped/
 │   │
-│   ├── processed/                 # Processed datasets / .gpkg files
+│   ├── processed/                    # Processed datasets / .gpkg files
 │   │   └──nps_geo.gpkg
 │   │
-│   └── db/                        # SQLite database
+│   └── db/                           # SQLite database
 │       └── nps_mortality_project.db
 │
 ├── Notebooks/
-│   ├── aquisitionAndCleaning.ipynb # Run this notebook first
-│   └── analysis.ipynb              # Run this notebook second
+│   ├── aquisition_and_cleaning.ipynb # Run this notebook first
+│   └── analysis.ipynb                # Run this notebook second
 │
-├── Maps/                           # Interactive .html map files
+├── Maps/                              # Interactive .html map files
 │   ├── mortality_rate_geo_choropleth.html
 │   └── regional_mortality_rate_geo_choropleth.html
 │
-├── Plots/                          # Static figures exported from analysis
+├── Plots/                             # Static figures exported from analysis
 │   ├── distribution_of_ages.png
 │   ├── distribution_of_causes_pie_plot.png
 │   ├── male_v_female_distribution.png
@@ -118,7 +118,7 @@ NPS_Mortality_Project/
 │   ├── spearman_correlation_activities.png
 │   └── top20_barplot.png
 │
-└── erd/                            # Database structure + reasoning
+└── erd/                               # Database structure + reasoning
     ├── erd.md
     ├── nps_erd.pdf
     └── nps_erd.png
